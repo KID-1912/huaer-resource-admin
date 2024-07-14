@@ -68,6 +68,11 @@ public class Application {
 
 此时运行项目，成功可访问80端口服务
 
+
+## 编写 User 实体类
+
+entity/User.java
+
 ## 参数校验
 
 手动引入 `spring-boot-starter-validation` 
@@ -97,29 +102,69 @@ public class Application {
 - @Future：日期是否为将来的日期；
 - @Past：日期是否为过去的日期；
 
-编写 User 实体类
-
 ### 单个参数
 
-@RequestParam @NotBlank(message = "用户名不能为空")
+```java
+
+@Controller
+@RestController
+@Validated
+public class UserController {
+  @PostMapping("/signin")
+  public Map<String, Object> signin(
+          @RequestParam @NotBlank String username,
+          @RequestParam @NotBlank(message = "密码不能为空") @Length(min = 6, message = "密码长度不能少于6位") String password
+  ) {
+  //  ......
+  }
+}
+```
+
+单参数校验时我们需要，在方法的类上加上@Validated注解，否则校验不生效。
 
 ### 整个参数
 
-`@ModelAttribute` + `bindingResult` 将表单数据绑定到一个对象上，并进行校验
+**@RequestBody + Entity**
+
+```java
+@PostMapping("/signin")
+public Map<String, String> signin(@Validated @RequestBody User user) {
+  String token = String.valueOf(System.currentTimeMillis());
+  return Map.of("token", token);
+}
+```
+
+**@RequestBody + VO/DTO**
+
+```java
+@PostMapping("create")
+public ResultResponse<Void> createUser(@Validated @RequestBody UserCreateRequestVO requestVO) {
+    return ResultResponse.success(null);
+}
+```
+
+如果请求参数与对象字段不一致，可借助 `@JsonProperty` 实现映射
+
+```java
+public class User {
+    private Long id;
+
+    @NotBlank(message = "用户名不能为空")
+    @JsonProperty("username") // 对应json中username
+    private String name;
+    
+    // ...
+}
+```
+
+**@ModelAttribute**
 
 ```java
 @Controller
 @RestController
 public class UserController {
   @PostMapping("/signin")
-  public Map<String, Object> signin(@Valid @ModelAttribute User user,BindingResult bindingResult) {
-    if (bindingResult.hasErrors()) {
-      // Handle validation errors
-      return Map.of(
-              "code", 400,
-              "msg", bindingResult.getFieldError().getDefaultMessage()
-      );
-    }
+  public Map<String, Object> signin(@Valid @ModelAttribute User user) {
     System.out.println(user.getName());
     String token = String.valueOf(System.currentTimeMillis());
     return Map.of("token", token);
@@ -127,9 +172,9 @@ public class UserController {
 }
 ```
 
-`bindingResult.hasErrors()` 当绑定中有不符合项将返回，否则将绑定部分有效值的字段，不匹配项将未绑定（使用默认值）
+当绑定中有不符合项将返回，否则将绑定部分有效值的字段，不匹配项将未绑定（使用默认值）
 
-这并不影响我们通过额外的 `@RequestParam("")` 获取指定http请求参数，进行其它操作
+这并不影响我们通过额外的 `@RequestParam` 获取指定http请求参数，进行其它操作
 
 ```java
 @Controller
@@ -147,10 +192,13 @@ public class UserController {
 }
 ```
 
+**@Validated 与 @Valid**
+
 @Validated：
 可以用在类或方法上。
 通常用于类级别，以启用方法级别的验证。
 支持分组验证（例如：@Validated(Group.class)）。
+
 @Valid：
 用在参数、属性或方法上。
 常用于方法参数或属性级别的验证，不支持分组验证。
@@ -190,41 +238,70 @@ public ResultResponse<UserInfoResponseVO> getUser(@NotBlank(message = "请选择
 
 1. 定义统一的异常类
 编写 exception/ServiceException.java，继承自 RuntimeException异常；成员核心属性 status message；
+供 Controller 抛出
+
 
 2. 全局异常处理器
 用于声明一个全局控制器建言（Advice），相当于把@ExceptionHandler、@InitBinder和@ModelAttribute注解的方法集中到一个地方。
 常放在一个特定的类上，这个类被认为是全局异常处理器，可以跨足多个控制器。
 配合 @ExceptionHandler 实现全局的异常处理，当控制器抛出异常时，SpringBoot会自动调用对应方法处理并返回定义响应
 
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+    // ServiceException
+    @ExceptionHandler(ServiceException.class)
+    @ResponseBody
+    public ResultResponse<Void> handleServiceException(ServiceException serviceException, HttpServletRequest request) {
+      // todo:日志记录
+      return ResultResponse.error(serviceException.getStatus(), serviceException.getMessage());
+    }
+    
+    // Exception
+    @ExceptionHandler(Exception.class)
+    @ResponseBody
+    public ResultResponse<Void> handleException(Exception ex, HttpServletRequest request) {
+      // todo:日志记录
+      return ResultResponse.error(StatusEnum.SERVICE_ERROR);
+    }
+}
+```
+
+3. 补充需要的异常类型处理
+
+- @ExceptionHandler(ServiceException.class)
+- @ExceptionHandler(Exception.class)
+- @ExceptionHandler(ConstraintViolationException.class)
+- @ExceptionHandler(MethodArgumentNotValidException.class)
+- @ExceptionHandler(MissingServletRequestParameterException.class)
+- @ExceptionHandler({UnexpectedTypeException.class,MethodArgumentTypeMismatchException.class})
+- @ExceptionHandler({HttpRequestMethodNotSupportedException.class, HttpMediaTypeException.class})
+- @ExceptionHandler(HttpMessageNotReadableException.class)
 
 
-
-
-
-
+## Lombok
 
 **引入 Lombok 依赖**
 确保你的项目已经包含 Lombok 依赖。以下是 Maven 和 Gradle 的配置示例：
 
-Maven
+1. Maven
 在 pom.xml 文件中添加 Lombok 依赖：
 
-xml
-复制代码
+```xml
 <dependency>
-<groupId>org.projectlombok</groupId>
-<artifactId>lombok</artifactId>
-<version>1.18.28</version>
-<scope>provided</scope>
+  <groupId>org.projectlombok</groupId>
+  <artifactId>lombok</artifactId>
+  <version>1.18.28</version>
+  <scope>provided</scope>
 </dependency>
+```
 
-确保你的 IDE 已正确配置 Lombok 插件：
+2. 确保你的 IDE 已正确配置 Lombok 插件：
 
 IntelliJ IDEA
 打开 IntelliJ IDEA，进入 File -> Settings -> Plugins。
 搜索 Lombok 插件并安装。
 确保在 File -> Settings -> Build, Execution, Deployment -> Compiler -> Annotation Processors 中，勾选 Enable annotation processing。
-Eclipse
 
 
 

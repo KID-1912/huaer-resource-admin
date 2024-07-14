@@ -1,5 +1,6 @@
 package com.huaer.resource.admin.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 
 public class User {
@@ -7,6 +8,7 @@ public class User {
     private Long id;
 
     @NotBlank(message="用户名不能为空")
+    @JsonProperty("username")
     private String name;
 
     @NotBlank(message="密码不能为空")
