@@ -13,19 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-//@Controller
-//@RestController
-//public class UserController {
-//    @PostMapping("/signin")
-//    public Map<String, String> signin(
-//            @RequestParam("username") String username,
-//            @RequestParam("password") String password
-//    ) {
-//        String token = String.valueOf(System.currentTimeMillis());
-//        return Map.of("token", token);
-//    }
-//}
-
 @Controller
 @RestController
 @Validated
@@ -39,14 +26,8 @@ public class UserController {
         return ResultResponse.success(Map.of("token", token));
     }
 
-    @PostMapping("create")
-    public ResultResponse<Void> createUser(@Validated @RequestBody UserCreateRequestVO requestVO) {
-        return ResultResponse.success(null);
-    }
-
-    @GetMapping("info")
-    public ResultResponse<UserInfoResponseVO> getUser(@NotBlank(message = "请选择用户") String userId) {
-        final UserInfoResponseVO responseVO = userService.getUserInfoById(userId);
-        return ResultResponse.success(responseVO);
+    @PostMapping("/register")
+    public ResultResponse<Void> register(){
+        
     }
 }

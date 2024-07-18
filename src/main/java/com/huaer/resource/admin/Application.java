@@ -9,7 +9,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 @SpringBootApplication
 // 暂时排除数据库自动配置
-@EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
+//@EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
 public class Application {
     public static void main(String[] args){
         SpringApplication.run(Application.class, args);

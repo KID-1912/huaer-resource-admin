@@ -97,7 +97,19 @@ public class Application {
 - @Future：日期是否为将来的日期；
 - @Past：日期是否为过去的日期；
 
-编写 User 实体类
+**编写 User 实体类**
+
+```java
+// entity/User.java
+public class User {
+    private Long id;
+    // ......
+    @Override
+    public String toString(){
+      return String.format("User[username=%s, id=%s, createAt=%s]", getUsername(), getId(), getCreatedAt());
+    }
+}
+```
 
 ### 单个参数
 
@@ -196,35 +208,139 @@ public ResultResponse<UserInfoResponseVO> getUser(@NotBlank(message = "请选择
 常放在一个特定的类上，这个类被认为是全局异常处理器，可以跨足多个控制器。
 配合 @ExceptionHandler 实现全局的异常处理，当控制器抛出异常时，SpringBoot会自动调用对应方法处理并返回定义响应
 
+## MySQL
 
+本地安装MySQL并新建数据库
 
+`CREATE DATABASE IF NOT EXISTS resource;`
 
+编写 DatabaseInitializer；
 
+```java
+@Component
+public class DatabaseInitializer {
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
+    @PostConstruct
+    public void init(){
+        jdbcTemplate.update("CREATE TABLE IF NOT EXISTS t_user ("
+        + "id BIGINT AUTO_INCREMENT NOT NULL PRIMARY KEY, "
+        + "username VARCHAR(100) NOT NULL, "
+        + "password VARCHAR(100) NOT NULL, "
+        + "createAt BIGINT NOT NULL, "
+        + "UNIQUE(username)"
+        + ");"
+        );
+    }
+}
+```
 
+application.yml 配置数据库
 
-**引入 Lombok 依赖**
-确保你的项目已经包含 Lombok 依赖。以下是 Maven 和 Gradle 的配置示例：
+```yml
+datasource:
+  url: jdbc:mysql://localhost:3306/resource?useSSL=false&serverTimezone=UTC
+  username: root
+  password:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  hikari:
+    maximum-pool-size: 20
+    minimum-idle: 5
+    idle-timeout: 60000
+    max-lifetime: 1800000
+    connection-timeout: 30000
+```
 
-Maven
-在 pom.xml 文件中添加 Lombok 依赖：
+移除禁用数据库自动配置代码
 
-xml
-复制代码
+```java
+// 注释这行
+// @EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
+```
+
+PRIMARY UNIQUE MULTIPLE
+PRI：Primary Key（主键），每行数据唯一标识的列，不允许重复且不能为空。
+UNI：Unique Key（唯一键），不允许重复值，可以有多个，但每个键的值必须唯一。
+MUL：Multiple Key（多重索引），允许重复值，通常用于外键或其他非唯一索引列。
+```sql
+CREATE TABLE example (
+    id INT AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(15),
+    age INT,
+    PRIMARY KEY (id),
+    UNIQUE KEY unique_username (username),
+    UNIQUE KEY unique_email (email),
+    KEY idx_phone (phone),
+    KEY idx_age (age)
+);
+```
+
+### MyBatis-Plus
+
+**引入MyBatis-Plus**
+
+```xml
 <dependency>
-<groupId>org.projectlombok</groupId>
-<artifactId>lombok</artifactId>
-<version>1.18.28</version>
-<scope>provided</scope>
+    <groupId>com.baomidou</groupId>
+    <artifactId>mybatis-plus-boot-starter</artifactId>
+    <version>3.5.2</version>
 </dependency>
+```
 
-确保你的 IDE 已正确配置 Lombok 插件：
+**引入Lombok**
+
+引入 Lombok 依赖
+
+```xml
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.24</version>
+    <scope>provided</scope>
+</dependency>
+```
+
+IDE安装 Lombok 插件：
 
 IntelliJ IDEA
 打开 IntelliJ IDEA，进入 File -> Settings -> Plugins。
 搜索 Lombok 插件并安装。
 确保在 File -> Settings -> Build, Execution, Deployment -> Compiler -> Annotation Processors 中，勾选 Enable annotation processing。
-Eclipse
+
+更多 Lombok 学习：https://www.quanxiaoha.com/lombok/lombok-tutorial.html
+
+
+**重写User实体类**
+
+```java
+@Data
+@TableName("t_user")
+public class User {
+
+    @TableId(type = IdType.AUTO)
+    private Long id;
+
+    @NotBlank(message="用户名不能为空")
+    private String username;
+
+    @NotBlank(message="密码不能为空")
+    private String password;
+
+    private long createdAt;
+}
+```
+
+
+
+注册用户（register）
+mybatis-plus 新增用户
+编写UserService.register
+
+
+
 
 
 
