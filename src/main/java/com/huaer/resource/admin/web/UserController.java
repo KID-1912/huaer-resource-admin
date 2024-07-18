@@ -28,6 +28,6 @@ public class UserController {
 
     @PostMapping("/register")
     public ResultResponse<Void> register(){
-        
+
     }
 }
