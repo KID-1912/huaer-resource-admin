@@ -24,7 +24,7 @@
         </triggeringPolicy>
     </appender>
 
-    <root level="INFO">
+    <root level="ERROR">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="APP_LOG" />
     </root>
