@@ -1,10 +1,12 @@
 package com.huaer.resource.admin.dto;
 
 import com.huaer.resource.admin.enums.StatusEnum;
+import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
 
+@Data
 public class ResultResponse<T> implements Serializable {
     @Serial
     private static final long serialVersionUID = -1133637474601003587L;
@@ -33,6 +35,7 @@ public class ResultResponse<T> implements Serializable {
     public static <T> ResultResponse<T> success(T data){
         ResultResponse<T> response = new ResultResponse<>();
         response.setData(data);
+        response.setMsg("操作成功");
         response.setCode(StatusEnum.SUCCESS.code);
         return response;
     }
@@ -55,29 +58,5 @@ public class ResultResponse<T> implements Serializable {
         response.setCode(statusEnum.code);
         response.setMsg(errorMsg);
         return response;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
     }
 }

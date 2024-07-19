@@ -125,7 +125,7 @@ public class User {
 @Validated
 public class UserController {
   @PostMapping("/signin")
-  public Map<String, Object> signin(
+  public Map<String, Object> doSignin(
           @RequestParam @NotBlank String username,
           @RequestParam @NotBlank(message = "密码不能为空") @Length(min = 6, message = "密码长度不能少于6位") String password
   ) {
@@ -142,7 +142,7 @@ public class UserController {
 
 ```java
 @PostMapping("/signin")
-public Map<String, String> signin(@Validated @RequestBody User user) {
+public Map<String, String> doSignin(@Validated @RequestBody User user) {
   String token = String.valueOf(System.currentTimeMillis());
   return Map.of("token", token);
 }
@@ -178,7 +178,7 @@ public class User {
 @RestController
 public class UserController {
   @PostMapping("/signin")
-  public Map<String, Object> signin(@Valid @ModelAttribute User user) {
+  public Map<String, Object> doSignin(@Valid @ModelAttribute User user) {
     System.out.println(user.getName());
     String token = String.valueOf(System.currentTimeMillis());
     return Map.of("token", token);
@@ -195,7 +195,7 @@ public class UserController {
 @RestController
 public class UserController {
     @PostMapping("/signin")
-    public Map<String, Object> signin(
+    public Map<String, Object> doSignin(
             @Valid @ModelAttribute User user,BindingResult bindingResult,
             @RequestParam("username") String username
     ) {
@@ -254,6 +254,19 @@ public ResultResponse<UserInfoResponseVO> getUser(@NotBlank(message = "请选择
 1. 定义统一的异常类
    编写 exception/ServiceException.java，继承自 RuntimeException 异常；成员核心属性 status message；
    供 Controller 抛出
+
+**使用**
+
+```java
+// UserService.java
+@Override
+public void createUser(UserCreateRequestVO requestVO) {
+    final UserDO userDO = userManager.selectUserByName(requestVO.getUserName());
+    if (userDO != null) {
+        throw new ServiceException(StatusEnum.PARAM_INVALID, "用户名已存在");
+    }
+}
+```
 
 2. 全局异常处理器
    用于声明一个全局控制器建言（Advice），相当于把@ExceptionHandler、@InitBinder 和@ModelAttribute 注解的方法集中到一个地方。
@@ -417,6 +430,125 @@ public class User {
 }
 ```
 
-注册用户（register）
-mybatis-plus 新增用户
-编写 UserService.register
+**编写mapper**
+
+项目根目录下新建 config 包，并创建 MybatisPlusConfig 配置类：
+
+```java
+@Configuration
+@MapperScan("com.huaer.resource.admin")
+public class MyBatisPlusConfig {
+}
+```
+
+项目根目录下新建 mapper 包，添加 Mapper 类
+
+```java
+public interface UserMapper extends BaseMapper<User> {
+}
+```
+
+Mapper使用
+
+```java
+// service/UserService.java
+@Autowired
+private UserMapper userMapper;
+
+@Override
+public User register(String username, String password){
+  User user = new User();
+  user.setUsername(username);
+  user.setPassword(password);
+  user.setCreatedAt(System.currentTimeMillis());
+  userMapper.insert(user);
+  Long id = user.getId();
+  System.out.println("id:" + id);
+  return user;
+}
+```
+
+**Service层**
+
+改写 `UserService.java` 为接口，使用 Mybatis Plus 封装的通用 Service 层 `IService`；
+
+```java
+public interface UserService extends IService<User> {
+    User register(String username, String password);
+}
+```
+
+新增 `UserServiceImpl.java` 继承于 ServiceImpl，实现 UserService
+
+```java
+@Service
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+    @Override
+    public User register(String username, String password) {
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.serCreatedAt(System.currentTimeMills());
+        this.save(user);
+        return user;
+    }
+}
+```
+
+## 注册
+
+完善 UserServiceImpl.register,包含 用户已存在，密码md5存储 等业务逻辑；
+
+**用户已存在**
+
+`t_user` 表查找username用户，判断存在性
+
+```java
+@Override
+public User register(String username, String password) {
+// 如果用户名已存在,抛出ServiceError
+    QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+    queryWrapper.select("id", "username");
+    queryWrapper.eq("username", username);
+    User user = this.getOne(queryWrapper);
+    if (user != null) {
+        throw new ServiceException(StatusEnum.USER_ALREADY_EXIST);
+    }
+//    ......
+}
+```
+
+**密码md5存储**
+
+Utils包下新增 `MD5Util` 工具类，提供encrypt方法
+
+`MessageDigest` 消息摘要算法（实例）
+
+`md.digest` 哈希计算
+
+## 登录
+
+UserServiceImpl.signin,包含 用户不存在，账号密码错误
+
+```java
+@Override
+public String signin(String username, String password){
+    QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+    queryWrapper.eq("username", username);
+    User user = this.getOne(queryWrapper);
+    // 如果用户不存在，抛出 Login_ERROR
+    if (user == null) {
+        throw new ServiceException(StatusEnum.Login_ERROR);
+    }
+    // 如果账号密码错误，抛出 Login_ERROR
+    if(!Objects.equals(user.getPassword(), MD5Util.encrypt(password))){
+        throw new ServiceException(StatusEnum.Login_ERROR);
+    }
+    // .....
+}
+```
+
+**JWT**
+
+todo: 根据用户信息 java jwt生成
+

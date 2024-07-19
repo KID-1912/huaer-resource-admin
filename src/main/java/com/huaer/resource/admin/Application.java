@@ -1,5 +1,6 @@
 package com.huaer.resource.admin;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 @SpringBootApplication
+@MapperScan("com.huaer.resource.admin.mapper")
 // 暂时排除数据库自动配置
 //@EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
 public class Application {

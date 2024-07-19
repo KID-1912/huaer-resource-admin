@@ -1,9 +1,11 @@
 package com.huaer.resource.admin.exception;
 
 import com.huaer.resource.admin.enums.StatusEnum;
+import lombok.Getter;
 
 import java.io.Serial;
 
+@Getter
 public class ServiceException extends RuntimeException {
     @Serial
     private static final long serialVersionUID = -3303518302920463234L;
@@ -16,10 +18,8 @@ public class ServiceException extends RuntimeException {
     }
 
     public ServiceException(StatusEnum status){
-        this(status, status.message);
+        this(status, status.message
+        );
     }
 
-    public StatusEnum getStatus() {
-        return status;
-    }
 }
