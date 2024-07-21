@@ -16,7 +16,7 @@ public class DatabaseInitializer {
         + "id BIGINT AUTO_INCREMENT NOT NULL PRIMARY KEY, "
         + "username VARCHAR(100) NOT NULL, "
         + "password VARCHAR(100) NOT NULL, "
-        + "createdAt BIGINT NOT NULL, "
+        + "created_at BIGINT NOT NULL, "
         + "UNIQUE(username)"
         + ");"
         );

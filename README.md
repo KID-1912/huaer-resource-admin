@@ -512,7 +512,7 @@ public User register(String username, String password) {
     queryWrapper.eq("username", username);
     User user = this.getOne(queryWrapper);
     if (user != null) {
-        throw new ServiceException(StatusEnum.USER_ALREADY_EXIST);
+        throw new ServiceException(StatusEnum.USER_NOT_FOUND);
     }
 //    ......
 }
@@ -536,19 +536,23 @@ public String signin(String username, String password){
     QueryWrapper<User> queryWrapper = new QueryWrapper<>();
     queryWrapper.eq("username", username);
     User user = this.getOne(queryWrapper);
-    // 如果用户不存在，抛出 Login_ERROR
+    // 如果用户不存在，抛出 LOGIN_ERROR
     if (user == null) {
-        throw new ServiceException(StatusEnum.Login_ERROR);
+        throw new ServiceException(StatusEnum.LOGIN_ERROR);
     }
-    // 如果账号密码错误，抛出 Login_ERROR
+    // 如果账号密码错误，抛出 LOGIN_ERROR
     if(!Objects.equals(user.getPassword(), MD5Util.encrypt(password))){
-        throw new ServiceException(StatusEnum.Login_ERROR);
+        throw new ServiceException(StatusEnum.LOGIN_ERROR);
     }
     // .....
 }
 ```
 
 **JWT**
-
+todo:
+编写SpringSecurityConfig,补充组件：PassWordEncoder,AuthenticationManager
+实现UserDetailService
+编写TokenUtil工具类
+有机会编写一下 Filter 和 Interceptor
 todo: 根据用户信息 java jwt生成
 

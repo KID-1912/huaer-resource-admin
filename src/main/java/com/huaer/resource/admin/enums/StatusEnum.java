@@ -7,9 +7,10 @@ public enum StatusEnum {
     SERVICE_ERROR(500,"服务器错误，请稍后重试"),
     PARAMS_INVALID(400, "参数无效"),
     BAD_REQUEST(400, "请求错误"),
-    Login_ERROR(1001, "用户名或密码错误"),
-    USER_ALREADY_EXIST(1004, "用户已存在"),
+    LOGIN_ERROR(1001, "用户名或密码错误"),
+    USER_NOT_FOUND(1004, "用户已存在"),
     ;
+
     public final Integer code;
 
     public final String message;
