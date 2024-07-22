@@ -2,21 +2,37 @@ package com.huaer.resource.admin.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.huaer.resource.admin.dto.ResultResponse;
+import com.huaer.resource.admin.bo.AccessToken;
 import com.huaer.resource.admin.entity.User;
 import com.huaer.resource.admin.enums.StatusEnum;
 import com.huaer.resource.admin.exception.ServiceException;
 import com.huaer.resource.admin.mapper.UserMapper;
+import com.huaer.resource.admin.provider.JwtProvider;
 import com.huaer.resource.admin.service.UserService;
 import com.huaer.resource.admin.util.MD5Util;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    public void setAuthenticationManager(@Lazy AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
+
+    @Autowired
+    JwtProvider jwtProvider;
 
     // 注册
     @Override
@@ -52,19 +68,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             throw new ServiceException(StatusEnum.LOGIN_ERROR);
         }
         // 认证方法
-//        // 1. 创建usernameAuthenticationToken
-//        UsrernamePasswordAuthenticationToken usernamePasswordAuthentication = new UsernamePasswordAuthenticationToken(username, password);
-//        // 2. 认证
-//        Authentication authentication = this.authenticationManager.authenticate(usernamePasswordAuthentication);
-//        // 3. 保存认证信息
-//        SecurityConextHolder.getContext().setAuthentication(anthentication);
-//        // 4. 生成自定义token
-//        UserDetail userDetail = (Userdetail) authentication.getPrincipal();
-//        AccessToken accessToken = jwtProvider.createToken((UserDetails) authentication.getPrincipal());
-//        // 5. 放入缓存
-//        caffeineCache.put(CacheName.USER, userDetail.getUsername(), userDetail);
-//        return ResultResponse.success(accessToken);
-        return "这是token";
+        // 1. 创建usernameAuthenticationToken
+        UsernamePasswordAuthenticationToken usernamePasswordAuthentication = new UsernamePasswordAuthenticationToken(username, password);
+        // 2. 认证
+        Authentication authentication = this.authenticationManager.authenticate(usernamePasswordAuthentication);
+        // 3. 保存认证信息
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        // 4. 生成自定义token
+        AccessToken accessToken = jwtProvider.createToken((UserDetails) authentication.getPrincipal());
+        // 5. 放入缓存
+        // UserDetail userDetail = (UserDetail) authentication.getPrincipal();
+        // caffeineCache.put(CacheName.USER, userDetail.getUsername(), userDetail);
+
+        return accessToken.getToken();
     }
 }
 

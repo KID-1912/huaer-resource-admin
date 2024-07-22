@@ -1,65 +1,417 @@
-2024-07-21T16:46:52.287+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dispatcherServlet'
-2024-07-21T16:46:52.287+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration'
-2024-07-21T16:46:52.287+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
-2024-07-21T16:46:52.294+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
-2024-07-21T16:46:52.294+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'dispatcherServlet'
-2024-07-21T16:46:52.294+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
-2024-07-21T16:46:52.296+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'multipartConfigElement'
-2024-07-21T16:46:52.296+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration'
-2024-07-21T16:46:52.297+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
-2024-07-21T16:46:52.298+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration' via constructor to bean named 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
-2024-07-21T16:46:52.298+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'errorPageCustomizer' via factory method to bean named 'dispatcherServletRegistration'
-2024-07-21T16:46:52.302+08:00 DEBUG 4948 --- [restartedMain] .s.b.w.e.t.TomcatServletWebServerFactory : Code archive: C:\Users\heyut\.m2\repository\org\springframework\boot\spring-boot\3.0.0\spring-boot-3.0.0.jar
-2024-07-21T16:46:52.302+08:00 DEBUG 4948 --- [restartedMain] .s.b.w.e.t.TomcatServletWebServerFactory : Code archive: C:\Users\heyut\.m2\repository\org\springframework\boot\spring-boot\3.0.0\spring-boot-3.0.0.jar
-2024-07-21T16:46:52.302+08:00 DEBUG 4948 --- [restartedMain] .s.b.w.e.t.TomcatServletWebServerFactory : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
-2024-07-21T16:46:52.302+08:00  INFO 4948 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-07-21T16:46:52.330+08:00 DEBUG 4948 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2024-07-21T16:46:52.330+08:00  INFO 4948 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 150 ms
-2024-07-21T16:46:52.330+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'requestContextFilter'
-2024-07-21T16:46:52.330+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'formContentFilter'
-2024-07-21T16:46:52.330+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
-2024-07-21T16:46:52.330+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'characterEncodingFilter'
-2024-07-21T16:46:52.330+08:00 DEBUG 4948 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2024-07-21T16:46:52.330+08:00 DEBUG 4948 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.w.s.f.OrderedRequestContextFilter  : Filter 'requestContextFilter' configured for use
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] s.b.w.s.f.OrderedCharacterEncodingFilter : Filter 'characterEncodingFilter' configured for use
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.w.s.f.OrderedFormContentFilter     : Filter 'formContentFilter' configured for use
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'application'
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'myBatisPlusConfig'
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'springSecurityConfig'
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'databaseInitializer'
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dataSourceScriptDatabaseInitializer'
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration'
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dataSource'
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari'
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
-2024-07-21T16:46:52.335+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSource' via factory method to bean named 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
-2024-07-21T16:46:52.343+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties'
-2024-07-21T16:46:52.343+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSourceScriptDatabaseInitializer' via factory method to bean named 'dataSource'
-2024-07-21T16:46:52.343+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSourceScriptDatabaseInitializer' via factory method to bean named 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties'
-2024-07-21T16:46:52.343+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jdbcTemplate'
-2024-07-21T16:46:52.343+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateConfiguration'
-2024-07-21T16:46:52.343+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties'
-2024-07-21T16:46:52.343+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcTemplate' via factory method to bean named 'dataSource'
-2024-07-21T16:46:52.343+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcTemplate' via factory method to bean named 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties'
-2024-07-21T16:46:52.343+08:00 DEBUG 4948 --- [restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL update [CREATE TABLE IF NOT EXISTS t_user (id BIGINT AUTO_INCREMENT NOT NULL PRIMARY KEY, username VARCHAR(100) NOT NULL, password VARCHAR(100) NOT NULL, created_at BIGINT NOT NULL, UNIQUE(username));]
-2024-07-21T16:46:52.343+08:00 DEBUG 4948 --- [restartedMain] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
-2024-07-21T16:46:52.351+08:00 DEBUG 4948 --- [restartedMain] o.s.jdbc.core.JdbcTemplate               : SQLWarning ignored: SQL state '42S01', error code '1050', message [Table 't_user' already exists]
-2024-07-21T16:46:52.351+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'globalExceptionHandler'
-2024-07-21T16:46:52.358+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'userServiceImpl'
-2024-07-21T16:46:52.358+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'userMapper'
-2024-07-21T16:46:52.358+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'sqlSessionFactory'
-2024-07-21T16:46:52.358+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration'
-2024-07-21T16:46:52.358+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties'
-2024-07-21T16:46:52.358+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' via constructor to bean named 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties'
-2024-07-21T16:46:52.358+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' via constructor to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3975443'
-2024-07-21T16:46:52.358+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'sqlSessionFactory' via factory method to bean named 'dataSource'
-2024-07-21T16:46:52.358+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'sqlSessionTemplate'
-2024-07-21T16:46:52.358+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'sqlSessionTemplate' via factory method to bean named 'sqlSessionFactory'
-2024-07-21T16:46:52.374+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'userController'
-2024-07-21T16:46:52.374+08:00 DEBUG 4948 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'validator'
-2024-07-21T16:46:52.374+08:00  WARN 4948 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'validator' defined in com.huaer.resource.admin.Application: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Illegal arguments to factory method 'validator'; args: 
-2024-07-21T16:46:52.390+08:00 DEBUG 4948 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+2024-07-22T18:55:00.318+08:00  INFO 17948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-22T18:55:00.320+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-07-22T18:55:00.320+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-07-22T18:55:00.320+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-07-22T18:55:00.321+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@42ebc49b
+2024-07-22T18:55:00.321+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7d54282c
+2024-07-22T18:55:00.322+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-07-22T18:55:00.322+08:00  INFO 17948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-07-22T18:55:00.327+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:55:00.337+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:55:00.338+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:55:00.339+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:55:00.340+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:55:00.341+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:55:00.342+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:55:00.448+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:55:00.469+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:55:00.471+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:55:00.525+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:55:00.525+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:55:00.533+08:00 DEBUG 17948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:21.008+08:00 DEBUG 17948 --- [SpringApplicationShutdownHook] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2024-07-22T18:56:21.009+08:00 DEBUG 17948 --- [SpringApplicationShutdownHook] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975, started on Mon Jul 22 18:54:56 CST 2024
+2024-07-22T18:56:21.010+08:00 DEBUG 17948 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147482623
+2024-07-22T18:56:21.011+08:00 DEBUG 17948 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'webServerGracefulShutdown' completed its stop procedure
+2024-07-22T18:56:21.011+08:00 DEBUG 17948 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147481599
+2024-07-22T18:56:21.022+08:00 DEBUG 17948 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'webServerStartStop' completed its stop procedure
+2024-07-22T18:56:21.022+08:00 DEBUG 17948 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-07-22T18:56:21.022+08:00 DEBUG 17948 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-07-22T18:56:21.024+08:00 DEBUG 17948 --- [SpringApplicationShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-07-22T18:56:24.256+08:00 DEBUG 9888 --- [restartedMain] o.s.boot.SpringApplication               : Loading source class com.huaer.resource.admin.Application
+2024-07-22T18:56:24.291+08:00 DEBUG 9888 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : Matching URLs for reloading : [file:/D:/huaer-resource-admin/target/classes/]
+2024-07-22T18:56:24.291+08:00 DEBUG 9888 --- [restartedMain] o.s.b.d.settings.DevToolsSettings        : Included patterns for restart : [/mybatis-plus-[\w-]+.jar]
+2024-07-22T18:56:24.291+08:00 DEBUG 9888 --- [restartedMain] o.s.b.d.settings.DevToolsSettings        : Excluded patterns for restart : [/spring-boot-starter-[\w-]+/, /spring-boot/(bin|build|out)/, /spring-boot-starter/(bin|build|out)/, /spring-boot-devtools/(bin|build|out)/, /spring-boot-actuator/(bin|build|out)/, /spring-boot-autoconfigure/(bin|build|out)/]
+2024-07-22T18:56:24.291+08:00  INFO 9888 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-22T18:56:24.291+08:00  INFO 9888 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-22T18:56:24.292+08:00 DEBUG 9888 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975
+2024-07-22T18:56:24.304+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-07-22T18:56:24.312+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-07-22T18:56:24.348+08:00 DEBUG 9888 --- [restartedMain] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: file [D:\huaer-resource-admin\target\classes\com\huaer\resource\admin\config\MyBatisPlusConfig.class]
+2024-07-22T18:56:24.353+08:00 DEBUG 9888 --- [restartedMain] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: file [D:\huaer-resource-admin\target\classes\com\huaer\resource\admin\config\SpringSecurityConfig.class]
+2024-07-22T18:56:24.354+08:00 DEBUG 9888 --- [restartedMain] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: file [D:\huaer-resource-admin\target\classes\com\huaer\resource\admin\DatabaseInitializer.class]
+2024-07-22T18:56:24.358+08:00 DEBUG 9888 --- [restartedMain] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: file [D:\huaer-resource-admin\target\classes\com\huaer\resource\admin\exception\GlobalExceptionHandler.class]
+2024-07-22T18:56:24.359+08:00 DEBUG 9888 --- [restartedMain] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: file [D:\huaer-resource-admin\target\classes\com\huaer\resource\admin\properties\JwtProperties.class]
+2024-07-22T18:56:24.360+08:00 DEBUG 9888 --- [restartedMain] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: file [D:\huaer-resource-admin\target\classes\com\huaer\resource\admin\provider\JwtProvider.class]
+2024-07-22T18:56:24.361+08:00 DEBUG 9888 --- [restartedMain] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: file [D:\huaer-resource-admin\target\classes\com\huaer\resource\admin\service\impl\UserServiceImpl.class]
+2024-07-22T18:56:24.366+08:00 DEBUG 9888 --- [restartedMain] o.s.c.a.ClassPathBeanDefinitionScanner   : Identified candidate component class: file [D:\huaer-resource-admin\target\classes\com\huaer\resource\admin\web\UserController.class]
+2024-07-22T18:56:24.767+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'com.huaer.resource.admin.config.MyBatisPlusConfig#MapperScannerRegistrar#0'
+2024-07-22T18:56:24.770+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
+2024-07-22T18:56:24.838+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor'
+2024-07-22T18:56:24.860+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-07-22T18:56:24.861+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'conversionServicePostProcessor'
+2024-07-22T18:56:24.872+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'
+2024-07-22T18:56:24.872+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'forceAutoProxyCreatorToUseClassProxying'
+2024-07-22T18:56:24.873+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-07-22T18:56:24.873+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+2024-07-22T18:56:24.875+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-07-22T18:56:24.876+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-07-22T18:56:24.878+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+2024-07-22T18:56:24.879+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
+2024-07-22T18:56:24.879+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinderFactory'
+2024-07-22T18:56:24.880+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2024-07-22T18:56:24.888+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'methodValidationPostProcessor'
+2024-07-22T18:56:24.891+08:00  WARN 9888 --- [restartedMain] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.mybatis.spring.mapper.MapperFactoryBean
+2024-07-22T18:56:24.894+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'methodValidationPostProcessor' via factory method to bean named 'environment'
+2024-07-22T18:56:24.895+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.EnableConfigurationPropertiesRegistrar.methodValidationExcludeFilter'
+2024-07-22T18:56:24.900+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'persistenceExceptionTranslationPostProcessor'
+2024-07-22T18:56:24.901+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'persistenceExceptionTranslationPostProcessor' via factory method to bean named 'environment'
+2024-07-22T18:56:24.903+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'webServerFactoryCustomizerBeanPostProcessor'
+2024-07-22T18:56:24.903+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'errorPageRegistrarBeanPostProcessor'
+2024-07-22T18:56:24.905+08:00 DEBUG 9888 --- [restartedMain] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@181ffa3a]
+2024-07-22T18:56:24.906+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'tomcatServletWebServerFactory'
+2024-07-22T18:56:24.906+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat'
+2024-07-22T18:56:24.906+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'preFilterAuthorizationMethodInterceptor'
+2024-07-22T18:56:24.907+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'preFilterAuthorizationMethodInterceptor' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:24.915+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'preAuthorizeAuthorizationMethodInterceptor'
+2024-07-22T18:56:24.917+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'preAuthorizeAuthorizationMethodInterceptor' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:24.921+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'postAuthorizeAuthorizationMethodInterceptor'
+2024-07-22T18:56:24.921+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'postAuthorizeAuthorizationMethodInterceptor' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:24.924+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'postFilterAuthorizationMethodInterceptor'
+2024-07-22T18:56:24.924+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'postFilterAuthorizationMethodInterceptor' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:24.926+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2024-07-22T18:56:24.926+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2024-07-22T18:56:24.930+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionAttributeSource'
+2024-07-22T18:56:24.934+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionInterceptor'
+2024-07-22T18:56:24.934+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'transactionInterceptor' via factory method to bean named 'transactionAttributeSource'
+2024-07-22T18:56:24.938+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionAttributeSource'
+2024-07-22T18:56:24.938+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionInterceptor'
+2024-07-22T18:56:24.970+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'websocketServletWebServerCustomizer'
+2024-07-22T18:56:24.971+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration'
+2024-07-22T18:56:24.972+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'servletWebServerFactoryCustomizer'
+2024-07-22T18:56:24.972+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration'
+2024-07-22T18:56:24.974+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2024-07-22T18:56:24.978+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.BoundConfigurationProperties'
+2024-07-22T18:56:24.998+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'servletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2024-07-22T18:56:25.000+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'tomcatServletWebServerFactoryCustomizer'
+2024-07-22T18:56:25.000+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'tomcatServletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2024-07-22T18:56:25.001+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'tomcatWebServerFactoryCustomizer'
+2024-07-22T18:56:25.002+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration'
+2024-07-22T18:56:25.004+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'environment'
+2024-07-22T18:56:25.004+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2024-07-22T18:56:25.006+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'localeCharsetMappingsCustomizer'
+2024-07-22T18:56:25.006+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration'
+2024-07-22T18:56:25.007+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2024-07-22T18:56:25.026+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'errorPageCustomizer'
+2024-07-22T18:56:25.027+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration'
+2024-07-22T18:56:25.031+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2024-07-22T18:56:25.034+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dispatcherServletRegistration'
+2024-07-22T18:56:25.034+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration'
+2024-07-22T18:56:25.037+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dispatcherServlet'
+2024-07-22T18:56:25.037+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration'
+2024-07-22T18:56:25.039+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2024-07-22T18:56:25.044+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2024-07-22T18:56:25.063+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'dispatcherServlet'
+2024-07-22T18:56:25.063+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2024-07-22T18:56:25.064+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'multipartConfigElement'
+2024-07-22T18:56:25.064+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration'
+2024-07-22T18:56:25.065+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
+2024-07-22T18:56:25.069+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration' via constructor to bean named 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
+2024-07-22T18:56:25.075+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'errorPageCustomizer' via factory method to bean named 'dispatcherServletRegistration'
+2024-07-22T18:56:25.171+08:00 DEBUG 9888 --- [restartedMain] .s.b.w.e.t.TomcatServletWebServerFactory : Code archive: D:\maven\repository\org\springframework\boot\spring-boot\3.0.0\spring-boot-3.0.0.jar
+2024-07-22T18:56:25.172+08:00 DEBUG 9888 --- [restartedMain] .s.b.w.e.t.TomcatServletWebServerFactory : Code archive: D:\maven\repository\org\springframework\boot\spring-boot\3.0.0\spring-boot-3.0.0.jar
+2024-07-22T18:56:25.172+08:00 DEBUG 9888 --- [restartedMain] .s.b.w.e.t.TomcatServletWebServerFactory : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2024-07-22T18:56:25.218+08:00  INFO 9888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-07-22T18:56:25.279+08:00 DEBUG 9888 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2024-07-22T18:56:25.281+08:00  INFO 9888 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 988 ms
+2024-07-22T18:56:25.282+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'securityFilterChainRegistration'
+2024-07-22T18:56:25.283+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration'
+2024-07-22T18:56:25.285+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.security-org.springframework.boot.autoconfigure.security.SecurityProperties'
+2024-07-22T18:56:25.288+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'securityFilterChainRegistration' via factory method to bean named 'spring.security-org.springframework.boot.autoconfigure.security.SecurityProperties'
+2024-07-22T18:56:25.293+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'requestContextFilter'
+2024-07-22T18:56:25.298+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'formContentFilter'
+2024-07-22T18:56:25.298+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
+2024-07-22T18:56:25.302+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'characterEncodingFilter'
+2024-07-22T18:56:25.309+08:00 DEBUG 9888 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-07-22T18:56:25.309+08:00 DEBUG 9888 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-07-22T18:56:25.327+08:00 DEBUG 9888 --- [restartedMain] o.s.b.w.s.f.OrderedRequestContextFilter  : Filter 'requestContextFilter' configured for use
+2024-07-22T18:56:25.330+08:00 DEBUG 9888 --- [restartedMain] s.b.w.s.f.OrderedCharacterEncodingFilter : Filter 'characterEncodingFilter' configured for use
+2024-07-22T18:56:25.330+08:00 DEBUG 9888 --- [restartedMain] .DelegatingFilterProxyRegistrationBean$1 : Filter 'springSecurityFilterChain' configured for use
+2024-07-22T18:56:25.330+08:00 DEBUG 9888 --- [restartedMain] o.s.b.w.s.f.OrderedFormContentFilter     : Filter 'formContentFilter' configured for use
+2024-07-22T18:56:25.337+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'application'
+2024-07-22T18:56:25.339+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'myBatisPlusConfig'
+2024-07-22T18:56:25.339+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'springSecurityConfig'
+2024-07-22T18:56:25.340+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'databaseInitializer'
+2024-07-22T18:56:25.343+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dataSourceScriptDatabaseInitializer'
+2024-07-22T18:56:25.344+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration'
+2024-07-22T18:56:25.344+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dataSource'
+2024-07-22T18:56:25.344+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari'
+2024-07-22T18:56:25.345+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
+2024-07-22T18:56:25.351+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSource' via factory method to bean named 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
+2024-07-22T18:56:25.373+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties'
+2024-07-22T18:56:25.376+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSourceScriptDatabaseInitializer' via factory method to bean named 'dataSource'
+2024-07-22T18:56:25.376+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSourceScriptDatabaseInitializer' via factory method to bean named 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties'
+2024-07-22T18:56:25.380+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jdbcTemplate'
+2024-07-22T18:56:25.380+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateConfiguration'
+2024-07-22T18:56:25.381+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties'
+2024-07-22T18:56:25.383+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcTemplate' via factory method to bean named 'dataSource'
+2024-07-22T18:56:25.383+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcTemplate' via factory method to bean named 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties'
+2024-07-22T18:56:25.397+08:00 DEBUG 9888 --- [restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL update [CREATE TABLE IF NOT EXISTS t_user (id BIGINT AUTO_INCREMENT NOT NULL PRIMARY KEY, username VARCHAR(100) NOT NULL, password VARCHAR(100) NOT NULL, created_at BIGINT NOT NULL, UNIQUE(username));]
+2024-07-22T18:56:25.400+08:00 DEBUG 9888 --- [restartedMain] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:25.548+08:00 DEBUG 9888 --- [restartedMain] o.s.jdbc.core.JdbcTemplate               : SQLWarning ignored: SQL state '42S01', error code '1050', message [Table 't_user' already exists]
+2024-07-22T18:56:25.554+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'globalExceptionHandler'
+2024-07-22T18:56:25.559+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jwtProperties'
+2024-07-22T18:56:25.560+08:00 DEBUG 9888 --- [restartedMain] ySourcesPropertyResolver$DefaultResolver : Found key 'jwt.apiSecretKey' in PropertySource 'Config resource 'class path resource [application.yml]' via location 'optional:classpath:/'' with value of type String
+2024-07-22T18:56:25.561+08:00 DEBUG 9888 --- [restartedMain] o.s.c.e.PropertySourcesPropertyResolver  : Found key 'jwt.apiSecretKey' in PropertySource 'environmentProperties' with value of type String
+2024-07-22T18:56:25.561+08:00 DEBUG 9888 --- [restartedMain] ySourcesPropertyResolver$DefaultResolver : Found key 'jwt.expirationTime' in PropertySource 'Config resource 'class path resource [application.yml]' via location 'optional:classpath:/'' with value of type Integer
+2024-07-22T18:56:25.561+08:00 DEBUG 9888 --- [restartedMain] o.s.c.e.PropertySourcesPropertyResolver  : Found key 'jwt.expirationTime' in PropertySource 'environmentProperties' with value of type String
+2024-07-22T18:56:25.561+08:00 DEBUG 9888 --- [restartedMain] ySourcesPropertyResolver$DefaultResolver : Found key 'jwt.requestHeader' in PropertySource 'Config resource 'class path resource [application.yml]' via location 'optional:classpath:/'' with value of type String
+2024-07-22T18:56:25.561+08:00 DEBUG 9888 --- [restartedMain] o.s.c.e.PropertySourcesPropertyResolver  : Found key 'jwt.requestHeader' in PropertySource 'environmentProperties' with value of type String
+2024-07-22T18:56:25.562+08:00 DEBUG 9888 --- [restartedMain] ySourcesPropertyResolver$DefaultResolver : Found key 'jwt.tokenPrefix' in PropertySource 'Config resource 'class path resource [application.yml]' via location 'optional:classpath:/'' with value of type String
+2024-07-22T18:56:25.562+08:00 DEBUG 9888 --- [restartedMain] o.s.c.e.PropertySourcesPropertyResolver  : Found key 'jwt.tokenPrefix' in PropertySource 'environmentProperties' with value of type String
+2024-07-22T18:56:25.563+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jwtProvider'
+2024-07-22T18:56:25.565+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'userServiceImpl'
+2024-07-22T18:56:25.576+08:00 DEBUG 9888 --- [restartedMain] o.s.beans.CachedIntrospectionResults     : Not strongly caching class [com.huaer.resource.admin.service.impl.UserServiceImpl] because it is not cache-safe
+2024-07-22T18:56:25.577+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'userMapper'
+2024-07-22T18:56:25.579+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'sqlSessionFactory'
+2024-07-22T18:56:25.579+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration'
+2024-07-22T18:56:25.580+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties'
+2024-07-22T18:56:25.586+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' via constructor to bean named 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties'
+2024-07-22T18:56:25.586+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' via constructor to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:25.589+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'sqlSessionFactory' via factory method to bean named 'dataSource'
+2024-07-22T18:56:25.648+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'sqlSessionTemplate'
+2024-07-22T18:56:25.649+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'sqlSessionTemplate' via factory method to bean named 'sqlSessionFactory'
+2024-07-22T18:56:25.777+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'userController'
+2024-07-22T18:56:25.784+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration'
+2024-07-22T18:56:25.785+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'objectPostProcessor'
+2024-07-22T18:56:25.785+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'objectPostProcessor' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@59ccc6d1'
+2024-07-22T18:56:25.787+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration'
+2024-07-22T18:56:25.789+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'enableGlobalAuthenticationAutowiredConfigurer'
+2024-07-22T18:56:25.789+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'enableGlobalAuthenticationAutowiredConfigurer' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:25.790+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'initializeUserDetailsBeanManagerConfigurer'
+2024-07-22T18:56:25.791+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'initializeUserDetailsBeanManagerConfigurer' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:25.791+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'initializeAuthenticationProviderBeanManagerConfigurer'
+2024-07-22T18:56:25.791+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'initializeAuthenticationProviderBeanManagerConfigurer' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:25.793+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'authenticationManagerBuilder'
+2024-07-22T18:56:25.793+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'authenticationManagerBuilder' via factory method to bean named 'objectPostProcessor'
+2024-07-22T18:56:25.793+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'authenticationManagerBuilder' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:25.794+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'authenticationEventPublisher'
+2024-07-22T18:56:25.794+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration'
+2024-07-22T18:56:25.795+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'authenticationEventPublisher' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:25.808+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration'
+2024-07-22T18:56:25.811+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration'
+2024-07-22T18:56:25.813+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'authenticationConfiguration'
+2024-07-22T18:56:25.815+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcContentNegotiationManager'
+2024-07-22T18:56:25.815+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration'
+2024-07-22T18:56:25.816+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2024-07-22T18:56:25.827+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2024-07-22T18:56:25.827+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2024-07-22T18:56:25.827+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@59ccc6d1'
+2024-07-22T18:56:25.831+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration'
+2024-07-22T18:56:25.832+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter'
+2024-07-22T18:56:25.833+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2024-07-22T18:56:25.833+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2024-07-22T18:56:25.833+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@59ccc6d1'
+2024-07-22T18:56:25.850+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'userDetailsService'
+2024-07-22T18:56:25.852+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'passwordEncoder'
+2024-07-22T18:56:25.908+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'securityFilterChain'
+2024-07-22T18:56:25.908+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'securityFilterChain' via factory method to bean named 'org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity'
+2024-07-22T18:56:25.910+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcHandlerMappingIntrospector'
+2024-07-22T18:56:25.912+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'welcomePageHandlerMapping'
+2024-07-22T18:56:25.913+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcConversionService'
+2024-07-22T18:56:25.917+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcResourceUrlProvider'
+2024-07-22T18:56:25.920+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:25.920+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcConversionService'
+2024-07-22T18:56:25.920+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-07-22T18:56:25.930+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'requestMappingHandlerMapping'
+2024-07-22T18:56:25.932+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2024-07-22T18:56:25.932+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
+2024-07-22T18:56:25.932+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-07-22T18:56:25.959+08:00 DEBUG 9888 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2024-07-22T18:56:25.964+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'viewControllerHandlerMapping'
+2024-07-22T18:56:25.964+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcConversionService'
+2024-07-22T18:56:25.964+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-07-22T18:56:25.965+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'beanNameHandlerMapping'
+2024-07-22T18:56:25.965+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcConversionService'
+2024-07-22T18:56:25.965+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-07-22T18:56:25.969+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'routerFunctionMapping'
+2024-07-22T18:56:25.970+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcConversionService'
+2024-07-22T18:56:25.970+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-07-22T18:56:25.971+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'messageConverters'
+2024-07-22T18:56:25.971+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration'
+2024-07-22T18:56:25.973+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'stringHttpMessageConverter'
+2024-07-22T18:56:25.974+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration'
+2024-07-22T18:56:25.974+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'stringHttpMessageConverter' via factory method to bean named 'environment'
+2024-07-22T18:56:25.978+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mappingJackson2HttpMessageConverter'
+2024-07-22T18:56:25.978+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration'
+2024-07-22T18:56:25.979+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jacksonObjectMapper'
+2024-07-22T18:56:25.979+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration'
+2024-07-22T18:56:25.979+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration'
+2024-07-22T18:56:25.980+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'standardJacksonObjectMapperBuilderCustomizer'
+2024-07-22T18:56:25.980+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration'
+2024-07-22T18:56:25.981+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+2024-07-22T18:56:25.983+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+2024-07-22T18:56:25.983+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'parameterNamesModule'
+2024-07-22T18:56:25.983+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration'
+2024-07-22T18:56:25.987+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jsonMixinModule'
+2024-07-22T18:56:25.987+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonMixinConfiguration'
+2024-07-22T18:56:25.988+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jsonMixinModuleEntries'
+2024-07-22T18:56:25.988+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jsonMixinModuleEntries' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:25.988+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+2024-07-22T18:56:25.988+08:00 DEBUG 9888 --- [restartedMain] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.huaer.resource.admin'. Automatic @Repository and @Entity scanning is enabled.
+2024-07-22T18:56:25.993+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jsonMixinModule' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:25.993+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jsonMixinModule' via factory method to bean named 'jsonMixinModuleEntries'
+2024-07-22T18:56:25.995+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jsonComponentModule'
+2024-07-22T18:56:25.995+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration'
+2024-07-22T18:56:26.000+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:26.000+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'standardJacksonObjectMapperBuilderCustomizer'
+2024-07-22T18:56:26.003+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jacksonObjectMapper' via factory method to bean named 'jacksonObjectMapperBuilder'
+2024-07-22T18:56:26.020+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'mappingJackson2HttpMessageConverter' via factory method to bean named 'jacksonObjectMapper'
+2024-07-22T18:56:26.030+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'resourceHandlerMapping'
+2024-07-22T18:56:26.031+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2024-07-22T18:56:26.031+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcConversionService'
+2024-07-22T18:56:26.031+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2024-07-22T18:56:26.040+08:00 DEBUG 9888 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-07-22T18:56:26.042+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'defaultServletHandlerMapping'
+2024-07-22T18:56:26.076+08:00  INFO 9888 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@45e81639, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@273395f8, org.springframework.security.web.context.SecurityContextHolderFilter@76b7a30d, org.springframework.security.web.header.HeaderWriterFilter@2033f653, org.springframework.web.filter.CorsFilter@7f28dd34, org.springframework.security.web.authentication.logout.LogoutFilter@172075d5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f8a62e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@577f291f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@786c3e7, org.springframework.security.web.session.SessionManagementFilter@687a47b6, org.springframework.security.web.access.ExceptionTranslationFilter@6de6c4c9, org.springframework.security.web.access.intercept.AuthorizationFilter@409a9220]
+2024-07-22T18:56:26.081+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'delegatingApplicationListener'
+2024-07-22T18:56:26.082+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'springSecurityFilterChain'
+2024-07-22T18:56:26.086+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'webSecurityExpressionHandler'
+2024-07-22T18:56:26.087+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'privilegeEvaluator'
+2024-07-22T18:56:26.088+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'requestDataValueProcessor'
+2024-07-22T18:56:26.088+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.security.config.annotation.method.configuration.PrePostMethodSecurityConfiguration'
+2024-07-22T18:56:26.089+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'authenticationManager'
+2024-07-22T18:56:26.089+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'validator'
+2024-07-22T18:56:26.096+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'
+2024-07-22T18:56:26.096+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration'
+2024-07-22T18:56:26.097+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration'
+2024-07-22T18:56:26.097+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration'
+2024-07-22T18:56:26.097+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'taskExecutorBuilder'
+2024-07-22T18:56:26.098+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2024-07-22T18:56:26.099+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'taskExecutorBuilder' via factory method to bean named 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2024-07-22T18:56:26.100+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration'
+2024-07-22T18:56:26.101+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration'
+2024-07-22T18:56:26.101+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'error'
+2024-07-22T18:56:26.102+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'beanNameViewResolver'
+2024-07-22T18:56:26.102+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration'
+2024-07-22T18:56:26.103+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975'
+2024-07-22T18:56:26.103+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2024-07-22T18:56:26.103+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'conventionErrorViewResolver'
+2024-07-22T18:56:26.104+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'errorAttributes'
+2024-07-22T18:56:26.105+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'basicErrorController'
+2024-07-22T18:56:26.105+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'basicErrorController' via factory method to bean named 'errorAttributes'
+2024-07-22T18:56:26.106+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'requestMappingHandlerAdapter'
+2024-07-22T18:56:26.107+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcValidator'
+2024-07-22T18:56:26.108+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
+2024-07-22T18:56:26.108+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
+2024-07-22T18:56:26.108+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
+2024-07-22T18:56:26.113+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'applicationTaskExecutor'
+2024-07-22T18:56:26.113+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'applicationTaskExecutor' via factory method to bean named 'taskExecutorBuilder'
+2024-07-22T18:56:26.117+08:00 DEBUG 9888 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-07-22T18:56:26.125+08:00 DEBUG 9888 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-07-22T18:56:26.142+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'localeResolver'
+2024-07-22T18:56:26.143+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'themeResolver'
+2024-07-22T18:56:26.143+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'flashMapManager'
+2024-07-22T18:56:26.145+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcPatternParser'
+2024-07-22T18:56:26.145+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcUrlPathHelper'
+2024-07-22T18:56:26.146+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcPathMatcher'
+2024-07-22T18:56:26.146+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'handlerFunctionAdapter'
+2024-07-22T18:56:26.148+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcUriComponentsContributor'
+2024-07-22T18:56:26.148+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'mvcConversionService'
+2024-07-22T18:56:26.148+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'requestMappingHandlerAdapter'
+2024-07-22T18:56:26.149+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'httpRequestHandlerAdapter'
+2024-07-22T18:56:26.150+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'simpleControllerHandlerAdapter'
+2024-07-22T18:56:26.150+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'handlerExceptionResolver'
+2024-07-22T18:56:26.151+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'handlerExceptionResolver' via factory method to bean named 'mvcContentNegotiationManager'
+2024-07-22T18:56:26.154+08:00 DEBUG 9888 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-07-22T18:56:26.156+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'mvcViewResolver'
+2024-07-22T18:56:26.156+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'mvcViewResolver' via factory method to bean named 'mvcContentNegotiationManager'
+2024-07-22T18:56:26.158+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'viewNameTranslator'
+2024-07-22T18:56:26.159+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'defaultViewResolver'
+2024-07-22T18:56:26.165+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'viewResolver'
+2024-07-22T18:56:26.165+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'viewResolver' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@59ccc6d1'
+2024-07-22T18:56:26.166+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'viewResolver'
+2024-07-22T18:56:26.167+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceJmxConfiguration$Hikari'
+2024-07-22T18:56:26.167+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceJmxConfiguration$Hikari' via constructor to bean named 'dataSource'
+2024-07-22T18:56:26.168+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceJmxConfiguration'
+2024-07-22T18:56:26.168+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration'
+2024-07-22T18:56:26.169+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration'
+2024-07-22T18:56:26.169+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'hikariPoolDataSourceMetadataProvider'
+2024-07-22T18:56:26.169+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration'
+2024-07-22T18:56:26.170+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration'
+2024-07-22T18:56:26.170+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'ddlApplicationRunner'
+2024-07-22T18:56:26.171+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration'
+2024-07-22T18:56:26.171+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration'
+2024-07-22T18:56:26.172+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration'
+2024-07-22T18:56:26.172+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'applicationAvailability'
+2024-07-22T18:56:26.173+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration'
+2024-07-22T18:56:26.173+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration'
+2024-07-22T18:56:26.174+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'lifecycleProcessor'
+2024-07-22T18:56:26.174+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties'
+2024-07-22T18:56:26.175+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'lifecycleProcessor' via factory method to bean named 'spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties'
+2024-07-22T18:56:26.176+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration'
+2024-07-22T18:56:26.176+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration'
+2024-07-22T18:56:26.176+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration'
+2024-07-22T18:56:26.177+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+2024-07-22T18:56:26.178+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration' via constructor to bean named 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+2024-07-22T18:56:26.178+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.NamedParameterJdbcTemplateConfiguration'
+2024-07-22T18:56:26.179+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'namedParameterJdbcTemplate'
+2024-07-22T18:56:26.179+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'namedParameterJdbcTemplate' via factory method to bean named 'jdbcTemplate'
+2024-07-22T18:56:26.182+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration'
+2024-07-22T18:56:26.182+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration'
+2024-07-22T18:56:26.182+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration'
+2024-07-22T18:56:26.183+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration'
+2024-07-22T18:56:26.183+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'taskSchedulerBuilder'
+2024-07-22T18:56:26.184+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+2024-07-22T18:56:26.184+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'taskSchedulerBuilder' via factory method to bean named 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+2024-07-22T18:56:26.185+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$JdbcTransactionManagerConfiguration'
+2024-07-22T18:56:26.186+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionManager'
+2024-07-22T18:56:26.186+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'transactionManager' via factory method to bean named 'environment'
+2024-07-22T18:56:26.186+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'transactionManager' via factory method to bean named 'dataSource'
+2024-07-22T18:56:26.188+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'platformTransactionManagerCustomizers'
+2024-07-22T18:56:26.188+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration'
+2024-07-22T18:56:26.189+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties'
+2024-07-22T18:56:26.192+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration'
+2024-07-22T18:56:26.192+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration$CglibAutoProxyConfiguration'
+2024-07-22T18:56:26.192+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration'
+2024-07-22T18:56:26.193+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$TransactionTemplateConfiguration'
+2024-07-22T18:56:26.193+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionTemplate'
+2024-07-22T18:56:26.193+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'transactionTemplate' via factory method to bean named 'transactionManager'
+2024-07-22T18:56:26.194+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration'
+2024-07-22T18:56:26.195+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration'
+2024-07-22T18:56:26.195+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'multipartResolver'
+2024-07-22T18:56:26.196+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration'
+2024-07-22T18:56:26.196+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'inMemoryDatabaseShutdownExecutor'
+2024-07-22T18:56:26.196+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'inMemoryDatabaseShutdownExecutor' via factory method to bean named 'dataSource'
+2024-07-22T18:56:26.196+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'inMemoryDatabaseShutdownExecutor' via factory method to bean named 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
+2024-07-22T18:56:26.197+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartConfiguration'
+2024-07-22T18:56:26.197+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.devtools-org.springframework.boot.devtools.autoconfigure.DevToolsProperties'
+2024-07-22T18:56:26.198+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartConfiguration' via constructor to bean named 'spring.devtools-org.springframework.boot.devtools.autoconfigure.DevToolsProperties'
+2024-07-22T18:56:26.199+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'restartingClassPathChangedEventListener'
+2024-07-22T18:56:26.199+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'fileSystemWatcherFactory'
+2024-07-22T18:56:26.199+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'restartingClassPathChangedEventListener' via factory method to bean named 'fileSystemWatcherFactory'
+2024-07-22T18:56:26.200+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'classPathFileSystemWatcher'
+2024-07-22T18:56:26.200+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'classPathRestartStrategy'
+2024-07-22T18:56:26.201+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'classPathFileSystemWatcher' via factory method to bean named 'fileSystemWatcherFactory'
+2024-07-22T18:56:26.201+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'classPathFileSystemWatcher' via factory method to bean named 'classPathRestartStrategy'
+2024-07-22T18:56:26.207+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'conditionEvaluationDeltaLoggingListener'
+2024-07-22T18:56:26.208+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$LiveReloadConfiguration'
+2024-07-22T18:56:26.208+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'optionalLiveReloadServer'
+2024-07-22T18:56:26.209+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'liveReloadServer' via factory method to bean named 'spring.devtools-org.springframework.boot.devtools.autoconfigure.DevToolsProperties'
+2024-07-22T18:56:26.210+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'optionalLiveReloadServer' via factory method to bean named 'liveReloadServer'
+2024-07-22T18:56:26.210+08:00 DEBUG 9888 --- [restartedMain] o.s.b.d.livereload.LiveReloadServer      : Starting live reload server on port 35729
+2024-07-22T18:56:26.211+08:00  INFO 9888 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-22T18:56:26.212+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'liveReloadServerEventListener'
+2024-07-22T18:56:26.212+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'liveReloadServerEventListener' via factory method to bean named 'optionalLiveReloadServer'
+2024-07-22T18:56:26.213+08:00 DEBUG 9888 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration'
+2024-07-22T18:56:26.221+08:00 DEBUG 9888 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-07-22T18:56:26.221+08:00 DEBUG 9888 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-07-22T18:56:26.221+08:00 DEBUG 9888 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147481599
+2024-07-22T18:56:26.237+08:00  INFO 9888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-07-22T18:56:26.238+08:00 DEBUG 9888 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'webServerStartStop'
+2024-07-22T18:56:26.238+08:00 DEBUG 9888 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147482623
+2024-07-22T18:56:26.238+08:00 DEBUG 9888 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'webServerGracefulShutdown'
+2024-07-22T18:56:26.247+08:00 DEBUG 9888 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 
 ============================
@@ -301,6 +653,19 @@ Positive matches:
    RestTemplateAutoConfiguration#restTemplateBuilderConfigurer matched:
       - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.client.RestTemplateBuilderConfigurer; SearchStrategy: all) did not find any beans (OnBeanCondition)
 
+   SecurityAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher' (OnClassCondition)
+
+   SecurityAutoConfiguration#authenticationEventPublisher matched:
+      - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationEventPublisher; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   SecurityFilterAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer', 'org.springframework.security.config.http.SessionCreationPolicy' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+   SecurityFilterAutoConfiguration#securityFilterChainRegistration matched:
+      - @ConditionalOnBean (names: springSecurityFilterChain; SearchStrategy: all) found bean 'springSecurityFilterChain' (OnBeanCondition)
+
    ServletWebServerFactoryAutoConfiguration matched:
       - @ConditionalOnClass found required class 'jakarta.servlet.ServletRequest' (OnClassCondition)
       - found 'session' scope (OnWebApplicationCondition)
@@ -314,6 +679,9 @@ Positive matches:
 
    SimpleCacheConfiguration matched:
       - Cache org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration automatic cache type (CacheCondition)
+
+   SpringBootWebSecurityConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
 
    SqlInitializationAutoConfiguration matched:
       - @ConditionalOnProperty (spring.sql.init.enabled) matched (OnPropertyCondition)
@@ -837,7 +1205,7 @@ Negative matches:
 
    OAuth2ClientAutoConfiguration:
       Did not match:
-         - @ConditionalOnClass did not find required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+         - @ConditionalOnClass did not find required class 'org.springframework.security.oauth2.client.registration.ClientRegistration' (OnClassCondition)
 
    OAuth2ResourceServerAutoConfiguration:
       Did not match:
@@ -921,7 +1289,7 @@ Negative matches:
 
    ReactiveOAuth2ResourceServerAutoConfiguration:
       Did not match:
-         - @ConditionalOnClass did not find required class 'org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity' (OnClassCondition)
+         - @ConditionalOnWebApplication did not find reactive web application classes (OnWebApplicationCondition)
 
    ReactiveSecurityAutoConfiguration:
       Did not match:
@@ -929,7 +1297,9 @@ Negative matches:
 
    ReactiveUserDetailsServiceAutoConfiguration:
       Did not match:
-         - @ConditionalOnClass did not find required class 'org.springframework.security.authentication.ReactiveAuthenticationManager' (OnClassCondition)
+         - AnyNestedCondition 0 matched 2 did not; NestedCondition on ReactiveUserDetailsServiceAutoConfiguration.ReactiveUserDetailsServiceCondition.ReactiveWebApplicationCondition did not find reactive web application classes; NestedCondition on ReactiveUserDetailsServiceAutoConfiguration.ReactiveUserDetailsServiceCondition.RSocketSecurityEnabledCondition @ConditionalOnBean (types: org.springframework.messaging.rsocket.annotation.support.RSocketMessageHandler; SearchStrategy: all) did not find any beans of type org.springframework.messaging.rsocket.annotation.support.RSocketMessageHandler (ReactiveUserDetailsServiceAutoConfiguration.ReactiveUserDetailsServiceCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.ReactiveAuthenticationManager' (OnClassCondition)
 
    ReactiveWebServerFactoryAutoConfiguration:
       Did not match:
@@ -965,13 +1335,9 @@ Negative matches:
       Did not match:
          - @ConditionalOnClass did not find required class 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (OnClassCondition)
 
-   SecurityAutoConfiguration:
+   SecurityDataConfiguration:
       Did not match:
-         - @ConditionalOnClass did not find required class 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher' (OnClassCondition)
-
-   SecurityFilterAutoConfiguration:
-      Did not match:
-         - @ConditionalOnClass did not find required class 'org.springframework.security.config.http.SessionCreationPolicy' (OnClassCondition)
+         - @ConditionalOnClass did not find required class 'org.springframework.security.data.repository.query.SecurityEvaluationContextExtension' (OnClassCondition)
 
    SendGridAutoConfiguration:
       Did not match:
@@ -996,6 +1362,16 @@ Negative matches:
    SpringApplicationAdminJmxAutoConfiguration:
       Did not match:
          - @ConditionalOnProperty (spring.application.admin.enabled=true) did not find property 'enabled' (OnPropertyCondition)
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
 
    SpringDataWebAutoConfiguration:
       Did not match:
@@ -1023,7 +1399,9 @@ Negative matches:
 
    UserDetailsServiceAutoConfiguration:
       Did not match:
-         - @ConditionalOnClass did not find required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder,org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector,org.springframework.security.oauth2.client.registration.ClientRegistrationRepository,org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' userDetailsService (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
 
    ValidationAutoConfiguration#defaultValidator:
       Did not match:
@@ -1107,43 +1485,220 @@ Unconditional classes:
 
 
 
-2024-07-21T16:46:52.390+08:00 ERROR 4948 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'validator' defined in com.huaer.resource.admin.Application: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Illegal arguments to factory method 'validator'; args: 
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:652)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:488)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1324)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1161)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:961)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:915)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291)
-	at com.huaer.resource.admin.Application.main(Application.java:16)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Illegal arguments to factory method 'validator'; args: 
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:157)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
-	... 24 common frames omitted
-Caused by: java.lang.IllegalArgumentException: object is not an instance of declaring class
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139)
-	... 25 common frames omitted
-
+2024-07-22T18:56:26.252+08:00 DEBUG 9888 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2024-07-22T18:56:26.254+08:00 DEBUG 9888 --- [restartedMain] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-07-22T18:56:26.254+08:00 DEBUG 9888 --- [restartedMain] o.s.boot.devtools.restart.Restarter      : Immediately restarting application
+2024-07-22T18:56:26.254+08:00 DEBUG 9888 --- [restartedMain] o.s.boot.devtools.restart.Restarter      : Starting application com.huaer.resource.admin.Application with URLs [file:/D:/huaer-resource-admin/target/classes/]
+2024-07-22T18:56:26.255+08:00 DEBUG 9888 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2024-07-22T18:56:31.724+08:00  INFO 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-22T18:56:31.724+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-07-22T18:56:31.725+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-07-22T18:56:31.725+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-07-22T18:56:31.725+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@58d84e47
+2024-07-22T18:56:31.726+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5dcd9890
+2024-07-22T18:56:31.726+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-07-22T18:56:31.726+08:00  INFO 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-07-22T18:56:31.731+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:31.740+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:31.742+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:31.743+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:31.743+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:31.745+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:31.745+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:31.846+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:31.866+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:31.868+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:31.919+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:31.919+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:31.926+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:43.073+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:43.073+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:43.073+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:43.073+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:43.073+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:43.073+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:43.074+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:43.075+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:43.076+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:43.077+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:43.079+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:43.079+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:43.080+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:44.364+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:44.365+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:44.365+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:44.365+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:44.365+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:44.365+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:44.365+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:44.366+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:44.368+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:44.369+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:44.370+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:44.370+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:44.372+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:45.149+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:45.150+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:45.150+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:45.150+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:45.150+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:45.150+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:45.150+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:45.151+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:45.154+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:45.155+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:45.158+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:45.158+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:45.159+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:45.863+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:45.863+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:45.863+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:45.863+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:45.863+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:45.863+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:45.863+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:45.864+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:45.866+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:45.867+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:45.868+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:45.868+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:45.869+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:46.659+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:46.659+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:46.660+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:46.660+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:46.660+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:46.660+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:46.660+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:46.661+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:46.663+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:46.665+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:46.666+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:46.666+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:46.666+08:00 DEBUG 9888 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:47.650+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:47.650+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:47.650+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:47.650+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:47.650+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:47.650+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:47.651+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:47.652+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:47.654+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:47.655+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:47.656+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:47.656+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:47.657+08:00 DEBUG 9888 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:49.222+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:49.222+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:49.222+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:49.222+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:49.222+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:49.222+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:49.222+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:49.224+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:49.227+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:49.229+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:49.230+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:49.230+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:49.231+08:00 DEBUG 9888 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:50.387+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:50.387+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:50.387+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:50.387+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:50.387+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:50.388+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:50.388+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:50.389+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:50.390+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:50.391+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:50.392+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:50.393+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:50.394+08:00 DEBUG 9888 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:51.275+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:51.275+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:51.275+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:51.275+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:51.275+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:51.275+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:51.276+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:51.276+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:51.279+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:51.280+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:51.281+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:51.281+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:51.282+08:00 DEBUG 9888 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:53.306+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:53.307+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:53.307+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:53.307+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:53.307+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:53.307+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:53.307+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:53.308+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:53.310+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:53.311+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:53.312+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:53.312+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:53.313+08:00 DEBUG 9888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:54.044+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:54.044+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:54.044+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:54.044+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:54.044+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:54.044+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:54.044+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:54.045+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:54.047+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:54.049+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:54.050+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:54.050+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:54.050+08:00 DEBUG 9888 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:54.760+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:54.761+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:54.761+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:54.761+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:54.761+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:54.761+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:54.761+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:54.762+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:54.764+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:54.765+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:54.766+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:54.766+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:54.767+08:00 DEBUG 9888 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:55.445+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:55.446+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:55.446+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:55.446+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:55.446+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:55.446+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:55.446+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:55.447+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:55.448+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:55.450+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:55.451+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:55.451+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:55.451+08:00 DEBUG 9888 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T18:56:56.047+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /signin
+2024-07-22T18:56:56.047+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:56.047+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-22T18:56:56.047+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:56.048+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /signin
+2024-07-22T18:56:56.048+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/signin", parameters={masked}
+2024-07-22T18:56:56.048+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.huaer.resource.admin.web.UserController#doSignin(String, String)
+2024-07-22T18:56:56.049+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:56.052+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2024-07-22T18:56:56.053+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-22T18:56:56.054+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-07-22T18:56:56.054+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [ResultResponse(code=200, msg=操作成功, data=BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmVyIiwiaWF0IjoxN (truncated)...]
+2024-07-22T18:56:56.055+08:00 DEBUG 9888 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-07-22T19:58:43.207+08:00 DEBUG 9888 --- [SpringApplicationShutdownHook] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2024-07-22T19:58:43.208+08:00 DEBUG 9888 --- [SpringApplicationShutdownHook] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74e15975, started on Mon Jul 22 18:56:24 CST 2024
+2024-07-22T19:58:43.209+08:00 DEBUG 9888 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147482623
+2024-07-22T19:58:43.210+08:00 DEBUG 9888 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'webServerGracefulShutdown' completed its stop procedure
+2024-07-22T19:58:43.210+08:00 DEBUG 9888 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147481599
+2024-07-22T19:58:43.222+08:00 DEBUG 9888 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'webServerStartStop' completed its stop procedure
+2024-07-22T19:58:43.222+08:00 DEBUG 9888 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-07-22T19:58:43.222+08:00 DEBUG 9888 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-07-22T19:58:43.223+08:00 DEBUG 9888 --- [SpringApplicationShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

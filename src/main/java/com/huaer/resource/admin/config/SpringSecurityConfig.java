@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -20,7 +19,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -28,11 +26,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true)
 public class SpringSecurityConfig {
-    @Autowired
-    private UserService userService;
 
-    // @AutoWired
-    // private RoleInfoService roleInfoService;
+//    private final UserDetailsServiceImpl userDetailsServiceImpl;
+//
+//    @Autowired
+//    public SpringSecurityConfig(UserDetailsServiceImpl userDetailsServiceImpl) {
+//        this.userDetailsServiceImpl = userDetailsServiceImpl;
+//    }
 
     // securityFilterChain 自定义访问控制
     @Bean
@@ -79,27 +79,34 @@ public class SpringSecurityConfig {
     }
 
     // 获取用户信息处理
+    private static class CustomerUserDetailsService implements UserDetailsService {
+        @Autowired
+        private UserService userService;
+
+        // @AutoWired
+        // private RoleInfoService roleInfoService;
+        @Override
+        public UserDetails loadUserByUsername(String username) throws ServiceException {
+            // 根据用户名验证用户
+            QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("username", username);
+            User user = userService.getOne(queryWrapper);
+            if (user == null) {
+                throw new ServiceException(StatusEnum.UNAUTHORIZED);
+            }
+
+            // 构建 UserDetail 对象
+            UserDetail userDetail = new UserDetail();
+            userDetail.setUser(user);
+            // List<RoleInfo> roleInfoList = roleInfoService.listRoleByUserId(userInfo.getUserId());
+            // userDetail.setRoleInfoList(roleInfoList);
+            return userDetail;
+        }
+    }
+
     @Bean
     public UserDetailsService userDetailsService() {
-        return new UserDetailsService(){
-            @Override
-            public UserDetails loadUserByUsername(String username) throws ServiceException {
-                // 根据用户名验证用户
-                QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-                queryWrapper.eq("username", username);
-                User user = userService.getOne(queryWrapper);
-                if (user == null) {
-                    throw new ServiceException(StatusEnum.UNAUTHORIZED);
-                }
-
-                // 构建 UserDetail 对象
-                UserDetail userDetail = new UserDetail();
-                userDetail.setUser(user);
-                // List<RoleInfo> roleInfoList = roleInfoService.listRoleByUserId(userInfo.getUserId());
-                // userDetail.setRoleInfoList(roleInfoList);
-                return userDetail;
-            }
-        };
+        return new CustomerUserDetailsService();
     }
 
     // 未登录异常处理
@@ -111,13 +118,15 @@ public class SpringSecurityConfig {
     // 自定义jwt过滤器
     // @Bean public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter
 
+    @Bean
+    public AuthenticationConfiguration authenticationConfiguration() {
+        return new AuthenticationConfiguration();
+    }
+
     // 使用自带的 authenticationManager 代办认证操作
     @Bean
-    public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
-        AuthenticationConfiguration authenticationConfiguration =
-                http.getSharedObject(AuthenticationConfiguration.class);
-
-        // 使用 AuthenticationConfiguration 创建 AuthenticationManager
+    public AuthenticationManager authenticationManager() throws Exception {
+        AuthenticationConfiguration authenticationConfiguration = authenticationConfiguration();
         return authenticationConfiguration.getAuthenticationManager();
     }
 
