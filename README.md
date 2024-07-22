@@ -556,3 +556,8 @@ todo:
 有机会编写一下 Filter 和 Interceptor
 todo: 根据用户信息 java jwt生成
 
+认证方法补充及说明
+UserServiceImpl添加修改循环引用
+
+jjwt2种生成
+
