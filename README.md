@@ -506,13 +506,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 ```java
 @Override
 public User register(String username, String password) {
-// 如果用户名已存在,抛出ServiceError
+// 如果用户名已存在,抛出 USER_ALREADY_EXISTS
     QueryWrapper<User> queryWrapper = new QueryWrapper<>();
     queryWrapper.select("id", "username");
     queryWrapper.eq("username", username);
     User user = this.getOne(queryWrapper);
     if (user != null) {
-        throw new ServiceException(StatusEnum.USER_NOT_FOUND);
+        throw new ServiceException(StatusEnum.USER_ALREADY_EXISTS);
     }
 //    ......
 }
@@ -555,9 +555,6 @@ todo:
 编写TokenUtil工具类
 有机会编写一下 Filter 和 Interceptor
 todo: 根据用户信息 java jwt生成
-
-认证方法补充及说明
-UserServiceImpl添加修改循环引用
 
 jjwt2种生成
 

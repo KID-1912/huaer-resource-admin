@@ -20,7 +20,7 @@ jwt:
   apiSecretKey: Y3AIq+T7wSzomU7hV7NiifsnC9vPVs9B7OIWE5BSL+jxPYGNRSVcpqj9OfiA21CYeHcLqaTmylbxJF93R2si8w==
   expirationTime: 57600
   requestHeader: Authorization
-  tokenPrefix: Bearer
+  tokenPrefix: "Bearer "
 logging:
   level:
     org.springframework: DEBUG

@@ -31,6 +31,6 @@ public class JwtProperties {
     /**
      * 默认token前缀
      */
-    @Value("${jwt.tokenPrefix:Bearer}")
+    @Value("${jwt.tokenPrefix:Bearer }")
     private String tokenPrefix;
 }

@@ -3,8 +3,6 @@ package com.huaer.resource.admin.config;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.huaer.resource.admin.entity.User;
 import com.huaer.resource.admin.entity.UserDetail;
-import com.huaer.resource.admin.enums.StatusEnum;
-import com.huaer.resource.admin.exception.ServiceException;
 import com.huaer.resource.admin.service.UserService;
 import com.huaer.resource.admin.util.MD5PasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +17,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -86,13 +85,13 @@ public class SpringSecurityConfig {
         // @AutoWired
         // private RoleInfoService roleInfoService;
         @Override
-        public UserDetails loadUserByUsername(String username) throws ServiceException {
+        public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
             // 根据用户名验证用户
             QueryWrapper<User> queryWrapper = new QueryWrapper<>();
             queryWrapper.eq("username", username);
             User user = userService.getOne(queryWrapper);
             if (user == null) {
-                throw new ServiceException(StatusEnum.UNAUTHORIZED);
+                throw new UsernameNotFoundException("用户不存在");
             }
 
             // 构建 UserDetail 对象

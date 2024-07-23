@@ -13,6 +13,7 @@ import com.huaer.resource.admin.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,15 +25,15 @@ import java.util.Objects;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
-    private AuthenticationManager authenticationManager;
+private AuthenticationManager authenticationManager;
 
-    @Autowired
-    public void setAuthenticationManager(@Lazy AuthenticationManager authenticationManager) {
-        this.authenticationManager = authenticationManager;
-    }
+@Autowired
+public void setAuthenticationManager(@Lazy AuthenticationManager authenticationManager) {
+    this.authenticationManager = authenticationManager;
+}
 
-    @Autowired
-    JwtProvider jwtProvider;
+@Autowired
+JwtProvider jwtProvider;
 
     // 注册
     @Override
@@ -41,9 +42,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         queryWrapper.select("id", "username");
         queryWrapper.eq("username", username);
         User user = this.getOne(queryWrapper);
-        // 如果用户名已存在,抛出 USER_NOT_FOUND
+        // 如果用户名已存在,抛出 USER_ALREADY_EXISTS
         if (user != null) {
-            throw new ServiceException(StatusEnum.USER_NOT_FOUND);
+            throw new ServiceException(StatusEnum.USER_ALREADY_EXISTS);
         }
         user = new User();
         user.setUsername(username);
@@ -56,22 +57,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     // 登录
     @Override
     public String signin(String username, String password) {
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("username", username);
-        User user = this.getOne(queryWrapper);
-        // 如果用户不存在，抛出 LOGIN_ERROR
-        if (user == null) {
-            throw new ServiceException(StatusEnum.LOGIN_ERROR);
-        }
-        // 如果账号密码错误，抛出 LOGIN_ERROR
-        if (!Objects.equals(user.getPassword(), MD5Util.encrypt(password))) {
-            throw new ServiceException(StatusEnum.LOGIN_ERROR);
-        }
         // 认证方法
         // 1. 创建usernameAuthenticationToken
         UsernamePasswordAuthenticationToken usernamePasswordAuthentication = new UsernamePasswordAuthenticationToken(username, password);
         // 2. 认证
-        Authentication authentication = this.authenticationManager.authenticate(usernamePasswordAuthentication);
+        Authentication authentication;
+        try {
+            authentication = this.authenticationManager.authenticate(usernamePasswordAuthentication);
+        }catch(BadCredentialsException e ){
+            throw new ServiceException(StatusEnum.LOGIN_ERROR);
+        }
         // 3. 保存认证信息
         SecurityContextHolder.getContext().setAuthentication(authentication);
         // 4. 生成自定义token
@@ -79,7 +74,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         // 5. 放入缓存
         // UserDetail userDetail = (UserDetail) authentication.getPrincipal();
         // caffeineCache.put(CacheName.USER, userDetail.getUsername(), userDetail);
-
         return accessToken.getToken();
     }
 }
