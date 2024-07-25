@@ -14,7 +14,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
-import java.util.Calendar;
 import java.util.Date;
 
 @Component
@@ -62,13 +61,16 @@ public class JwtProvider {
     // 从token解析出负载信息
     private Claims getClaimsFromToken(String token) {
         Claims claims = null;
+        SecretKey key = Keys.hmacShaKeyFor(jwtProperties.getApiSecretKey().getBytes(StandardCharsets.UTF_8));
         try {
-            claims = Jwts.parser()
-                    .setSigningKey(jwtProperties.getApiSecretKey())
+            claims = Jwts.parserBuilder()
+                    .setSigningKey(key)
+                    .build()
                     .parseClaimsJws(token)
                     .getBody();
         } catch (Exception e) {
             logger.error("JWT反解析失败，token错误或已过期，token:{}", token);
+            logger.error(e.getMessage());
         }
         return claims;
     }
@@ -93,7 +95,8 @@ public class JwtProvider {
     public AccessToken refreshToken(String oldToken) {
         String token = oldToken.substring(jwtProperties.getTokenPrefix().length());
         Claims claims = getClaimsFromToken(token);
-        // 如果30分钟内刷新过，返回原token
+        // 旧token签发时间30分钟内，返回原token
+        System.out.println(tokenRefreshJustBefore(claims));
         if (tokenRefreshJustBefore(claims)) {
             return AccessToken.builder().loginAccount(claims.getSubject()).token(oldToken).expirationTime(claims.getExpiration()).build();
         }else{
@@ -101,14 +104,12 @@ public class JwtProvider {
         }
     }
 
-    // 判断token在指定时间内是否刷新过
+    // 判断token在30分钟内签发的
     private boolean tokenRefreshJustBefore(Claims claims){
-        Date refreshDate = new Date();
-        Calendar createCalendar = Calendar.getInstance();
-        createCalendar.setTime(claims.getExpiration());
-        createCalendar.add(Calendar.SECOND, (int) (-1 * jwtProperties.getExpirationTime()));
-        // 刷新时间在创建时间的指定范围内
-        return refreshDate.before(claims.getExpiration()) && refreshDate.after(createCalendar.getTime());
+        Date nowDate = new Date();
+        Date tokenCreateDate = new Date(claims.getExpiration().getTime() - jwtProperties.getExpirationTime() * 1000);
+        // 当前时间在token创建时间30分钟范围内
+        return nowDate.after(tokenCreateDate) && nowDate.before(new Date(tokenCreateDate.getTime() + 3 * 60 * 1000));
     }
 
 }

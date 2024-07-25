@@ -20,20 +20,22 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
-private AuthenticationManager authenticationManager;
+    private AuthenticationManager authenticationManager;
 
-@Autowired
-public void setAuthenticationManager(@Lazy AuthenticationManager authenticationManager) {
-    this.authenticationManager = authenticationManager;
-}
+    @Autowired
+    public void setAuthenticationManager(@Lazy AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
 
-@Autowired
-JwtProvider jwtProvider;
+    @Autowired
+    JwtProvider jwtProvider;
 
     // 注册
     @Override
@@ -58,13 +60,13 @@ JwtProvider jwtProvider;
     @Override
     public String signin(String username, String password) {
         // 认证方法
-        // 1. 创建usernameAuthenticationToken
+        // 1. 创建未认证UsernamePasswordAuthenticationToken
         UsernamePasswordAuthenticationToken usernamePasswordAuthentication = new UsernamePasswordAuthenticationToken(username, password);
         // 2. 认证
         Authentication authentication;
         try {
             authentication = this.authenticationManager.authenticate(usernamePasswordAuthentication);
-        }catch(BadCredentialsException e ){
+        } catch (BadCredentialsException e) {
             throw new ServiceException(StatusEnum.LOGIN_ERROR);
         }
         // 3. 保存认证信息
@@ -76,5 +78,25 @@ JwtProvider jwtProvider;
         // caffeineCache.put(CacheName.USER, userDetail.getUsername(), userDetail);
         return accessToken.getToken();
     }
+
+    // 刷新token
+    @Override
+    public AccessToken refreshToken(String token) {
+        return jwtProvider.refreshToken(token);
+    }
+
+    // 退出登录
+    @Override
+    public void logout() {
+        // caffeineCache.remove(CacheName.USER, AuthProvider.getLoginAccount());
+        SecurityContextHolder.clearContext();
+    }
+
+    // 列表用户名称
+    @Override
+    public List<String> listUsername(){
+        List<User> userList = this.list();
+        return userList.stream().map(User::getUsername).collect(Collectors.toList());
+    };
 }
 

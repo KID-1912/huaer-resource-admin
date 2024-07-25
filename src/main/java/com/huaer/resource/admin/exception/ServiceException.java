@@ -18,8 +18,7 @@ public class ServiceException extends RuntimeException {
     }
 
     public ServiceException(StatusEnum status){
-        this(status, status.message
-        );
+        this(status, status.message);
     }
 
 }

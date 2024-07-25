@@ -1,10 +1,14 @@
 package com.huaer.resource.admin.config;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.huaer.resource.admin.component.JwtAuthenticationTokenFilter;
+import com.huaer.resource.admin.component.RestAuthenticationEntryPoint;
+import com.huaer.resource.admin.component.RestfulAccessDeniedHandler;
 import com.huaer.resource.admin.entity.User;
 import com.huaer.resource.admin.entity.UserDetail;
 import com.huaer.resource.admin.service.UserService;
 import com.huaer.resource.admin.util.MD5PasswordEncoder;
+import jakarta.servlet.DispatcherType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,44 +24,45 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true)
 public class SpringSecurityConfig {
 
-//    private final UserDetailsServiceImpl userDetailsServiceImpl;
-//
-//    @Autowired
-//    public SpringSecurityConfig(UserDetailsServiceImpl userDetailsServiceImpl) {
-//        this.userDetailsServiceImpl = userDetailsServiceImpl;
-//    }
-
     // securityFilterChain 自定义访问控制
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .authorizeHttpRequests(authorizeRequests ->
-                        authorizeRequests
-                                // 放行所有OPTIONS请求
-                                .requestMatchers(HttpMethod.OPTIONS).permitAll()
-                                // 放行静态资源请求
-                                .requestMatchers(
-                                        HttpMethod.GET,
-                                        "/",
-                                        "/*.html",
-                                        "/favicon.ico",
-                                        "/**/*.html",
-                                        "**/*.css",
-                                        "/**/*.js"
-                                ).permitAll()
-                                // 放行登录/注册方法
-                                .requestMatchers("/signin", "/register").permitAll()
-                                // 对于获取token的rest api允许匿名访问
-                                // .requestMatchers("/auth/**").permitAll()
-                                // 除上面的其他所有请求全部需要鉴权认证
-                                .anyRequest().authenticated()
-                )
+@Bean
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    http
+            .authorizeHttpRequests(authorizeRequests ->
+                    authorizeRequests
+                            // 放行所有OPTIONS请求
+                            .requestMatchers(HttpMethod.OPTIONS).permitAll()
+                            // 放行静态资源请求
+                            .requestMatchers(
+                                    HttpMethod.GET,
+                                    "/",
+                                    "/*.html",
+                                    "/favicon.ico",
+                                    "/*/*.html",
+                                    "/*/*.css",
+                                    "/*/*.js"
+                            ).permitAll()
+                            .requestMatchers("/error").permitAll()
+                            // 放行登录/注册方法
+                            .requestMatchers("/signin", "/register").permitAll()
+                            // 对于获取token的rest api允许匿名访问
+                            // .requestMatchers("/auth/**").permitAll()
+                            // 除上面的其他所有请求全部需要鉴权认证
+                            .anyRequest().authenticated()
+            )
+            .exceptionHandling()
+            .authenticationEntryPoint(restAuthenticationEntryPoint())
+            .accessDeniedHandler(restfulAccessDeniedHandler())
+            .and()
+            // 将自定义的JWT过滤器放到过滤链中
+            .addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class)
                 // 打开Spring Security的跨域
                 .cors()
                 .and()
@@ -108,14 +113,24 @@ public class SpringSecurityConfig {
         return new CustomerUserDetailsService();
     }
 
+
     // 未登录异常处理
-    // @Bean public RestfulAccessDeniedHandler restfulAccessDeniedHandler
+     @Bean
+    public RestAuthenticationEntryPoint restAuthenticationEntryPoint(){
+        return new RestAuthenticationEntryPoint();
+    }
 
     // 权限不足异常处理
-    // @Bean public RestAuthenticationEntryPoint restAuthenticationEntryPoint
+    @Bean
+    public RestfulAccessDeniedHandler restfulAccessDeniedHandler(){
+        return new RestfulAccessDeniedHandler();
+    }
 
-    // 自定义jwt过滤器
-    // @Bean public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter
+    // jwt过滤器
+    @Bean
+    public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter() {
+        return new JwtAuthenticationTokenFilter();
+    }
 
     @Bean
     public AuthenticationConfiguration authenticationConfiguration() {

@@ -1,25 +1,27 @@
 package com.huaer.resource.admin.web;
 
+import com.huaer.resource.admin.bo.AccessToken;
 import com.huaer.resource.admin.dto.ResultResponse;
 import com.huaer.resource.admin.entity.User;
+import com.huaer.resource.admin.provider.JwtProvider;
 import com.huaer.resource.admin.service.UserService;
-import jakarta.validation.Valid;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+import java.util.List;
 
-@Controller
 @RestController
 @Validated
 public class UserController {
     @Autowired
-    UserService userService;
+    private  UserService userService;
+
+    @Autowired
+    private JwtProvider jwtProvider;
 
     @PostMapping("/signin")
     public ResultResponse<String> doSignin(
@@ -36,5 +38,23 @@ public class UserController {
     ) {
         User user = userService.register(username, password);
         return ResultResponse.success(null);
+    }
+
+    @PostMapping("/logout")
+    public ResultResponse<Void> doLogout(){
+        userService.logout();
+        return ResultResponse.success(null);
+    }
+
+    @PostMapping("/refresh-token")
+    public ResultResponse<String> doRefreshToken(HttpServletRequest request){
+        String oldToken = jwtProvider.getToken(request);
+        AccessToken accessToken = userService.refreshToken(oldToken);
+        return ResultResponse.success(accessToken.getToken());
+    }
+
+    @GetMapping("/admin/user/list")
+    public ResultResponse<List<String>> doListUsername(){
+        return ResultResponse.success(userService.listUsername());
     }
 }
